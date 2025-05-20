@@ -106,7 +106,7 @@ export default function DataTableDemo() {
                 View
               </span>
             </DialogTrigger>
-            <DialogContent className="max-w-md p-5 pt-5">
+            <DialogContent className="max-w-md p-5 pt-10">
               <DialogHeader>
                 <DialogTitle className="text-xl font-semibold text-black">
                   {selectedArticle?.title}
@@ -206,7 +206,7 @@ export default function DataTableDemo() {
               Articles
             </p>
 
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center hidden md:block items-center">
               <Tabs
                 value={tabFilter}
                 onValueChange={setTabFilter}

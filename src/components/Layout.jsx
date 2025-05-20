@@ -6,21 +6,23 @@ import MobileDrawer from "./MobileDrawer";
 function Layout({ children }) {
   return (
     <SidebarProvider>
-      <main className="flex min-h-screen flex-col md:flex-row">
+      <div className="min-h-screen md:max-w-8xl w-full mx-auto overflow-x-hidden  flex flex-col lg:flex-row">
         {/* Mobile Top Bar */}
-        <div className="flex items-center justify-between   py-2 md:hidden border-b">
+        <header className="lg:hidden flex items-center justify-between px-4 py-2 border-b">
           <MobileDrawer />
-          <h1 className="text-lg font-semibold text-black mx-2">Article Dashboard</h1>
-        </div>
+          <h1 className="text-lg font-semibold text-black">Article Dashboard</h1>
+        </header>
 
-        {/* Sidebar */}
-        <aside className="  hidden md:flex flex-col">
+        {/* Sidebar for Desktop */}
+        <aside className="hidden lg:block w-64 bg-gray-100 border-r min-h-screen">
           <SidebarNav />
         </aside>
 
         {/* Main Content */}
-        <div className=" w-full p-5">{children}</div>
-      </main>
+        <main className="flex-1 p-4">
+          {children}
+        </main>
+      </div>
     </SidebarProvider>
   );
 }

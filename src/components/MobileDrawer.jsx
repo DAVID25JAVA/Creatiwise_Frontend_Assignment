@@ -19,7 +19,7 @@ const MobileDrawer = () => {
     <div className="md:hidden">
       <Drawer direction="left">
         <DrawerTrigger asChild>
-          <Button variant="outline" size="icon" className="mx-3">
+          <Button variant="outline" size="icon" className="">
             <Menu className="w-5 h-5  text-black" />
           </Button>
         </DrawerTrigger>
