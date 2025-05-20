@@ -52,8 +52,8 @@ const articlesMenu = {
 };
 
 const otherMenuItems = [
-  { label: "Auto Blog", icon: Zap, href: "/auto-blog" },
-  { label: "Internal Links", icon: Link, href: "/internal-links" },
+  { label: "Auto Blog", icon: Zap, href: "/auto_blog" },
+  { label: "Internal Links", icon: Link, href: "/internal_links" },
   { label: "Free Backlinks", icon: Share, href: "/backlinks" },
   { label: "Integrations", icon: Puzzle, href: "/integrations" },
   { label: "Subscription", icon: CreditCard, href: "/subscription" },
@@ -96,95 +96,106 @@ export default function SidebarNav() {
 
   return (
     <div className="">
-          
-    
-    <div className="2xl:container 2xl:mx-auto">
-      <Sidebar className=" overflow-y-auto">
-        <SidebarHeader>
-          <h2 onClick={()=>router.push("/")} className="text-4xl cursor-pointer font-extrabold mb-5 ml-5">abun</h2>
-        </SidebarHeader>
-        <SidebarContent className="ml-5">
-          <SidebarMenu>
-            {/* Articles Dropdown */}
-            <SidebarMenuItem>
-              <SidebarMenuButton
-                isActive={activeItem === "Articles"}
-                onClick={() => setIsArticlesOpen(!isArticlesOpen)}
-                className="group"
-              >
-                <FileText className="size-4 text-blue-500 " />
-                <span
-                  className={`${
-                    activeItem === "Articles" ? "text-blue-600" : "text-black"
-                  }`}
-                >
-                  {articlesMenu.label}
-                </span>
-                <ChevronDown
-                  className={`size-4 ml-auto text-blue-500 transition-transform ${
-                    isArticlesOpen ? "rotate-180 duration-400" : ""
-                  }`}
-                />
-              </SidebarMenuButton>
-
-              {isArticlesOpen && (
-                <SidebarMenuSub>
-                  {articlesMenu.subItems.map((subItem, index) =>
-                    subItem === "separator" ? (
-                      <SidebarSeparator key={index} />
-                    ) : (
-                      <SidebarMenuSubItem key={index}>
-                        <SidebarMenuSubButton
-                          isActive={activeItem === subItem.label}
-                          onClick={() => handleNavigation(subItem.href)}
-                          className="group"
-                        >
-                          <span
-                            className={`${
-                              activeItem === subItem.label
-                                ? "text-blue-600"
-                                : "text-black"
-                            }`}
-                          >
-                            {subItem.label}
-                          </span>
-                        </SidebarMenuSubButton>
-                      </SidebarMenuSubItem>
-                    )
-                  )}
-                </SidebarMenuSub>
-              )}
-            </SidebarMenuItem>
-
-            {/* Static Items */}
-            {otherMenuItems.map((item, index) => (
-              <SidebarMenuItem key={index}>
+      <div className="2xl:container 2xl:mx-auto">
+        <Sidebar className=" overflow-y-auto">
+          <SidebarHeader>
+            <h2
+              onClick={() => router.push("/")}
+              className="text-4xl cursor-pointer font-extrabold mb-5 ml-5"
+            >
+              abun
+            </h2>
+            <div className=" ">
+              <p className="border w-44 h-9 rounded-full text-center ml-5 flex justify-center gap-5 items-center">
+                <span className="w-6 h-6 border bg-gradient-to-t mr-5 bg-pink-500 rounded-full"></span>
+                <span>amazon.com</span>
+              </p>
+            </div>
+          </SidebarHeader>
+          <SidebarContent className="ml-5 cursor-pointer">
+            <SidebarMenu>
+              {/* Articles Dropdown */}
+              <SidebarMenuItem>
                 <SidebarMenuButton
-                  isActive={activeItem === item.label}
-                  onClick={() => handleNavigation(item.href)}
+                  isActive={activeItem === "Articles"}
+                  onClick={() => setIsArticlesOpen(!isArticlesOpen)}
                   className="group"
                 >
-                  <item.icon
-                    className={`size-4 ${
-                      activeItem === item.label
-                        ? "text-blue-600"
-                        : "text-blue-500"
-                    }`}
-                  />
+                  <FileText className="size-4 text-blue-500 cursor-pointer " />
                   <span
                     className={`${
-                      activeItem === item.label ? "text-blue-600" : "text-black"
+                      activeItem === "Articles" ? "text-blue-600" : "text-black"
                     }`}
                   >
-                    {item.label}
+                    {articlesMenu.label}
                   </span>
+                  <ChevronDown
+                    className={`size-4 ml-auto text-blue-500 transition-transform ${
+                      isArticlesOpen ? "rotate-180 duration-400" : ""
+                    }`}
+                  />
                 </SidebarMenuButton>
+
+                {isArticlesOpen && (
+                  <SidebarMenuSub>
+                    {articlesMenu.subItems.map((subItem, index) =>
+                      subItem === "separator" ? (
+                        <SidebarSeparator key={index} />
+                      ) : (
+                        <SidebarMenuSubItem key={index}>
+                          <SidebarMenuSubButton
+                            isActive={activeItem === subItem.label}
+                            onClick={() => handleNavigation(subItem.href)}
+                            className="group"
+                          >
+                            <span
+                              className={`${
+                                activeItem === subItem.label
+                                  ? "text-blue-600"
+                                  : "text-black"
+                              }`}
+                            >
+                              {subItem.label}
+                            </span>
+                          </SidebarMenuSubButton>
+                        </SidebarMenuSubItem>
+                      )
+                    )}
+                  </SidebarMenuSub>
+                )}
               </SidebarMenuItem>
-            ))}
-          </SidebarMenu>
-        </SidebarContent>
-      </Sidebar>
-    </div>
+
+              {/* Static Items */}
+              {otherMenuItems.map((item, index) => (
+                <SidebarMenuItem key={index}>
+                  <SidebarMenuButton
+                    isActive={activeItem === item.label}
+                    onClick={() => handleNavigation(item.href)}
+                    className="group"
+                  >
+                    <item.icon
+                      className={`size-4 ${
+                        activeItem === item.label
+                          ? "text-blue-600"
+                          : "text-blue-500"
+                      }`}
+                    />
+                    <span
+                      className={`${
+                        activeItem === item.label
+                          ? "text-blue-600"
+                          : "text-black"
+                      }`}
+                    >
+                      {item.label}
+                    </span>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarContent>
+        </Sidebar>
+      </div>
     </div>
   );
 }

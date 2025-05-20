@@ -206,55 +206,57 @@ export default function DataTableDemo() {
               Articles
             </p>
 
-            <div className="flex justify-center hidden md:block items-center">
-              <Tabs
-                value={tabFilter}
-                onValueChange={setTabFilter}
-                className="w-[500px]"
-              >
-                <TabsList>
-                  <TabsTrigger
-                    value="generated"
-                    className={`text-black p-2 ${
-                      tabFilter === "generated"
-                        ? "  text-black border border-blue-500"
-                        : ""
-                    }`}
-                  >
-                    Generated Articles
-                  </TabsTrigger>
-                  <TabsTrigger
-                    value="published"
-                    className={`text-black p-2 ${
-                      tabFilter === "published"
-                        ? "text-black border border-blue-500"
-                        : ""
-                    }`}
-                  >
-                    Published Articles
-                  </TabsTrigger>
-                  <TabsTrigger
-                    value="scheduled"
-                    className={`text-black p-2 ${
-                      tabFilter === "scheduled"
-                        ? "text-black border border-blue-500"
-                        : ""
-                    }`}
-                  >
-                    Scheduled Articles
-                  </TabsTrigger>
-                  <TabsTrigger
-                    value="archived"
-                    className={`text-black p-2 ${
-                      tabFilter === "archived"
-                        ? "text-black border border-blue-500 bg-blue-600"
-                        : ""
-                    }`}
-                  >
-                    Archived Articles
-                  </TabsTrigger>
-                </TabsList>
-              </Tabs>
+            <div className="hidden md:block">
+              <div className="flex justify-center  items-center">
+                <Tabs
+                  value={tabFilter}
+                  onValueChange={setTabFilter}
+                  className="w-[500px]"
+                >
+                  <TabsList>
+                    <TabsTrigger
+                      value="generated"
+                      className={`text-black p-2 ${
+                        tabFilter === "generated"
+                          ? "  text-black border border-blue-500"
+                          : ""
+                      }`}
+                    >
+                      Generated Articles
+                    </TabsTrigger>
+                    <TabsTrigger
+                      value="published"
+                      className={`text-black p-2 ${
+                        tabFilter === "published"
+                          ? "text-black border border-blue-500"
+                          : ""
+                      }`}
+                    >
+                      Published Articles
+                    </TabsTrigger>
+                    <TabsTrigger
+                      value="scheduled"
+                      className={`text-black p-2 ${
+                        tabFilter === "scheduled"
+                          ? "text-black border border-blue-500"
+                          : ""
+                      }`}
+                    >
+                      Scheduled Articles
+                    </TabsTrigger>
+                    <TabsTrigger
+                      value="archived"
+                      className={`text-black p-2 ${
+                        tabFilter === "archived"
+                          ? "text-black border border-blue-500 bg-blue-600"
+                          : ""
+                      }`}
+                    >
+                      Archived Articles
+                    </TabsTrigger>
+                  </TabsList>
+                </Tabs>
+              </div>
             </div>
 
             <div className="flex flex-col md:flex-row items-start md:items-center py-4 gap-3">
